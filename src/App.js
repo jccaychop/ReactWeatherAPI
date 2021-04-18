@@ -1,16 +1,11 @@
 import React from 'react';
-import { useFetchMyIP } from './hooks/useFetchMyIP';
+import { PrincipalState } from './principal/PrincipalState';
+import { AppRouter } from './routers/AppRouter';
 
 export const App = () => {
-
-  const { ip, loading } = useFetchMyIP();
-
-  console.log("DATA : ", ip);
-  console.log("LOADING : ", loading);
-
-  return (
-    <div>
-      HOLA, mi direccion IP es : <span>{ip}</span>
-    </div>
-  )
+    return (
+        <PrincipalState>
+            <AppRouter />
+        </PrincipalState>
+    )
 }

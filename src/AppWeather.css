@@ -1,0 +1,122 @@
+@import url(https://allfont.es/allfont.css?fonts=cooperhewitt-light);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "CooperHewitt-Light", arial;
+  background-color: #d2dad1;
+  font-size: 1.1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.principal-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  line-height: normal;
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+}
+
+.principal-left,
+.principal-right {
+  margin: auto 20px;
+}
+
+.list-temp {
+  font-size: 7rem;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+}
+
+.list-description {
+  font-size: 2rem;
+}
+
+.list-hour {
+  font-size: 1.2rem;
+}
+
+.principal-icon {
+  /*  */
+}
+
+.prueba {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  /* border: 1px solid red; */
+}
+
+.principal-values {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.principal-values-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.principal-values-list li {
+  /*  */
+}
+
+/* CIRCLE PROGRESS */
+.circle_reactGradientProgressPercentageSpan__1HdhL {
+  font-weight: 600;
+}
+
+.porcentaje-circular {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.porcentaje-circular-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 200px;
+  margin: 0 20px;
+  margin-bottom: 30px;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.forecast-item {
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 10px #aaa;
+  background-color: #eee;
+  transition: all 0.5s ease-out;
+}
+
+.forecast-item:hover {
+  transform: scale(1.1, 1.1);
+  transition: all 0.5s ease-in;
+}
+
+.forecast-temp-max {
+}
+
+.forecast-temp-min {
+  color: rgba(0, 0, 0, 0.37);
+}
