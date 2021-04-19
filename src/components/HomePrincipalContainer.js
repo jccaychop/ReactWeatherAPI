@@ -15,7 +15,7 @@ export const HomePrincipalContainer = () => {
                     <div>
                         <div className="principal-container">
                             <div className="principal-left">
-                                <img className="principal-icon" src={`http://openweathermap.org/img/wn/${myLocationWeather.icon}@4x.png`} alt="icono" />
+                                <img className="principal-icon" src={`https://openweathermap.org/img/wn/${myLocationWeather.icon}@4x.png`} alt="icono" />
                             </div>
 
                             <div className="principal-right">
