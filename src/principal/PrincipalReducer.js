@@ -2,6 +2,12 @@ import { types } from "../types/types";
 
 export const PrincipalReducer = (stateActual = {}, action) => {
     switch (action.type) {
+        case types.options:
+            return {
+                ...stateActual,
+                options: action.data.options
+            }
+
         case types.myLocation:
             return {
                 ...stateActual,

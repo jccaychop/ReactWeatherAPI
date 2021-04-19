@@ -111,7 +111,7 @@ ul {
 }
 
 .forecast-item:hover {
-  transform: scale(1.1, 1.1);
+  transform: scale(1.05, 1.05);
   transition: all 0.5s ease-in;
 }
 
@@ -129,8 +129,8 @@ ul {
   color: rgba(0, 0, 0, 0.37);
 }
 
-@media (max-width: 343px) {
+@media (max-width: 405px) {
   .list-temp {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }

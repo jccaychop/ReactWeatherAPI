@@ -9,11 +9,30 @@ import { getWeatherByLocation, getWeatherForecastByLocation } from '../helpers/g
 export const PrincipalState = (props) => {
 
     const [state, dispatch] = useReducer(PrincipalReducer, {
+        options: {
+            idLanguage: 'en',
+            metric: 'standard',
+            metricSymbol: 'K'
+        },
         myLocation: null,
         myLocationWeather: null,
         myLocationWeatherForecast: null,
         loading: true
     });
+
+    const setOptions = (objeto) => {
+        let data = {
+            idLanguage: objeto.idLang,
+            metric: objeto.metrica,
+            metricSymbol: objeto.simbolo
+        }
+        dispatch({
+            type: types.options,
+            data: {
+                options: data
+            }
+        })
+    }
 
     const getCurrentLocation = () => {
         // console.log("getCurrentLocation ejecutado");
@@ -39,9 +58,9 @@ export const PrincipalState = (props) => {
         });
     }
 
-    const getCurrentWeatherByLocation = (location, units = "standard", lang = "us") => {
+    const getCurrentWeatherByLocation = (location) => {
         // console.log("getCurrentWeatherByLocation ejecutado");
-        getWeatherByLocation(location, units, lang).then(data => {
+        getWeatherByLocation(location, state.options.metric, state.options.idLanguage).then(data => {
             // console.log("DATA WEATHER BY LOCATION : ", data);
             if (data) {
                 // console.log("aea");
@@ -75,15 +94,13 @@ export const PrincipalState = (props) => {
         })
     }
 
-    const getCurrentWeatherForecastByLocation = (lat, lon, units = "standard", lang = "us") => {
-        console.log("getWeatherForecastByLocation ejecutado");
-        getWeatherForecastByLocation(lat, lon, units, lang).then(data => {
-            console.log("DATA WEATHER FORECAST BY LOCATION : ", data);
+    const getCurrentWeatherForecastByLocation = (lat, lon) => {
+        // console.log("getWeatherForecastByLocation ejecutado");
+        getWeatherForecastByLocation(lat, lon, state.options.metric, state.options.idLanguage).then(data => {
+            // console.log("DATA WEATHER FORECAST BY LOCATION : ", data);
             if (data) {
                 const newDaily = data.daily.filter((value, index) => {
-                    if (index > 0 && index < data.daily.length - 1) {
-                        return value;
-                    }
+                    return index > 0 && index < data.daily.length - 1;
                 })
                 dispatch({
                     type: types.myLocationWeatherForecast,
@@ -95,23 +112,33 @@ export const PrincipalState = (props) => {
         })
     }
 
+
     useEffect(() => {
         getCurrentLocation();
     }, [])
 
     useEffect(() => {
         if (state.myLocation !== null) {
-            getCurrentWeatherByLocation(state.myLocation.stateProv, "metric", "es");
+            getCurrentWeatherByLocation(state.myLocation.stateProv, state.options.metric, state.options.idLanguage);
         }
-    }, [state.myLocation])
+    }, [state.myLocation, state.options])
+
+    useEffect(() => {
+        if (state.myLocationWeather !== null) {
+            getCurrentWeatherForecastByLocation(state.myLocationWeather.latitude, state.myLocationWeather.longitude, state.options.metric, state.options.idLanguage);
+        }
+    }, [state.myLocationWeather])
+
 
     return (
         <PrincipalContext.Provider value={{
+            options: state.options,
             myLocation: state.myLocation,
             myLocationWeather: state.myLocationWeather,
             myLocationWeatherForecast: state.myLocationWeatherForecast,
             loading: state.loading,
-            getCurrentWeatherForecastByLocation
+            getCurrentWeatherForecastByLocation,
+            setOptions
         }}>
             {props.children}
         </PrincipalContext.Provider>

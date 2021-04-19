@@ -1,16 +1,17 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { HomePrincipalPronosticoSemanalItem } from './HomePrincipalPronosticoSemanalItem';
 import PrincipalContext from './../principal/PrincipalContext';
 
 export const HomePrincipalPronosticoSemanal = () => {
 
-    const { myLocationWeather, myLocationWeatherForecast, getCurrentWeatherForecastByLocation } = useContext(PrincipalContext);
+    const { myLocationWeatherForecast } = useContext(PrincipalContext);
 
-    useEffect(() => {
-        if (myLocationWeather !== null) {
-            getCurrentWeatherForecastByLocation(myLocationWeather.latitude, myLocationWeather.longitude, "metric", "es");
-        }
-    }, [myLocationWeather])
+    // useEffect(() => {
+    //     if (myLocationWeather !== null) {
+    //         getCurrentWeatherForecastByLocation(myLocationWeather.latitude, myLocationWeather.longitude, "metric", "es");
+    //     }
+    // }, [myLocationWeather])
+
 
     return (
         <>
