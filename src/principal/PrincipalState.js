@@ -115,7 +115,7 @@ export const PrincipalState = (props) => {
 
     useEffect(() => {
         getCurrentLocation();
-    }, [])
+    }, [state.options])
 
     useEffect(() => {
         if (state.myLocation !== null) {

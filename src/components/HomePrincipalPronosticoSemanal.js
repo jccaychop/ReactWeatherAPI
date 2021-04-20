@@ -6,13 +6,6 @@ export const HomePrincipalPronosticoSemanal = () => {
 
     const { myLocationWeatherForecast } = useContext(PrincipalContext);
 
-    // useEffect(() => {
-    //     if (myLocationWeather !== null) {
-    //         getCurrentWeatherForecastByLocation(myLocationWeather.latitude, myLocationWeather.longitude, "metric", "es");
-    //     }
-    // }, [myLocationWeather])
-
-
     return (
         <>
             <div className="forecast-container">
@@ -27,11 +20,6 @@ export const HomePrincipalPronosticoSemanal = () => {
                     </>
                 }
             </div>
-
-            {/* <div>
-                <p>LOCATION WEATHER FORECAST</p>
-                <pre>{JSON.stringify(myLocationWeatherForecast, null, 3)}</pre>
-            </div> */}
         </>
     )
 }

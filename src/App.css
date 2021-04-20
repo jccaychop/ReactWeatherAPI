@@ -1,5 +1,4 @@
-@import url(https://allfont.es/allfont.css?fonts=cooperhewitt-light);
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap);
+@import url(./assets/fonts/fonts.css);
 
 * {
   box-sizing: border-box;
@@ -46,10 +45,6 @@ ul {
   font-size: 1.2rem;
 }
 
-.principal-icon {
-  /*  */
-}
-
 .principal-container-list {
   display: flex;
   justify-content: center;
@@ -68,10 +63,6 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-}
-
-.principal-values-list li {
-  /*  */
 }
 
 /* CIRCLE PROGRESS */
@@ -121,7 +112,7 @@ ul {
   background-color: #d2dad1;
 }
 
-.forecast-description{
+.forecast-description {
   margin-top: 1rem;
 }
 

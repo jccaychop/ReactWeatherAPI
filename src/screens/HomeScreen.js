@@ -24,16 +24,6 @@ export const HomeScreen = () => {
                     <HomePrincipalPronosticoSemanal />
 
                 </div>
-
-                {/* <div>
-                    <p>LOCATION</p>
-                    <pre>{JSON.stringify(myLocation, null, 3)}</pre>
-                </div>
-
-                <div>
-                    <p>LOCATION WEATHER</p>
-                    <pre>{JSON.stringify(myLocationWeather, null, 3)}</pre>
-                </div> */}
             </div>
 
         </>
