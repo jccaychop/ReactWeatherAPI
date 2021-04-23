@@ -93,7 +93,7 @@ export const FormularioOptions = () => {
                 </div>
             </div>
             <div>
-                <button type="submit" className="btn btn-primary mb-2">OK</button>
+                <button type="submit" className="btn btn-primary mb-2">SET</button>
             </div>
         </form>
     )
